@@ -90,9 +90,12 @@
 // }
 
 
-
-function mindGame(number){
+//------------
+//Problem 1
+//------------
 	//by using this function we can  multiplying the input by 3 , adding 10 with the result, dividing the whole result by 2 and then subtracting 5 from the result and finally return the result.
+function mindGame(number){
+
 	   let variable_type = typeof(number);
 	   if(variable_type !== "number" || number<0)
 	     return "Error!! Please give a positive number..."
@@ -105,13 +108,15 @@ function mindGame(number){
 	    return result;
 	   }
 }
-// let number;
-// console.log(mindGame(5))
 
+//console.log(mindGame(5))
 
-
+//------------
+//Problem 2
+//------------
+  //by using this function we can count the string length and find those length are even or odd..if length is even we return even if length is odd we return odd.
 function evenOdd(strings){
-  //by using this function we can count the string length and find those length are even or odd
+
   let variable_type = typeof(strings);
 	   if(variable_type !== "string" )
 	     return "Error!! Please give a string..."
@@ -123,43 +128,76 @@ function evenOdd(strings){
             return 'Odd';
             }
 }
-// let strings;
-// console.log(evenOdd('Batch7'))
 
-function isLGSeven(num){
-    let result=num-7;
-	   if(result<7)
-	     return num;
-    else
-      return (num*2);
+//console.log(evenOdd('Batch7'))
+
+//------------
+//Problem 3
+//------------
+  // In this function  we can find the number is less or greater than seven or not,,if yes we return the number-7...else we multiply the number by 2 and return number*2.
+function isLGSeven(number){
+
+  let variable_type = typeof(number);
+	   if(variable_type !== "number")
+	     return "Error!! Please give a number..."
+	   else{
+        let difference = (number-7);
+        if(difference<7)
+          return  number-7;
+        else
+          return number*2;
+      }
+    }
+ //console.log(isLGSeven(-15))
+
+//------------
+//Problem 4
+//------------
+// In this function negative number is a bad array and we can find and count those negative number from an array.
+function findingBadData(array){
+
+	   if(Array.isArray(array) === false)
+	     return "Error!! Please give a array...";
+	   else{
+          for(let i=0 ; i<array.length; i++)
+          {
+            if(typeof(array[i]) !== "number")
+            {
+              return "Error!! Please give a number in array...";
+            }
+
+          }
+
+          let count=0;
+          for(let i=0 ; i<array.length; i++){
+            if(array[i]<0)
+            {
+              count++;
+            }
+            }
+            return count;
+         }
+       }
+//console.log(findingBadData( [-9, -5, -33, 5 ,8 ,-7] ))
+
+//------------
+//Problem 5
+//------------
+//In this function we can Convert your friends gems into diamond and return the the diamond value.
+function gemsToDiamond(friend1,friend2, friend3)
+{
+  let variable_type = typeof(friend1,friend2, friend3);
+	   if(variable_type !== "number")
+	     return "Error!! Please give a positive number..."
+	   else{
+          const gem1=21;
+          const gem2=32;
+          const gem3=43;
+          let diamond=(friend1*gem1)+(friend2*gem2)+(friend3*gem3);
+        if(diamond>1000*2)
+        return diamond-2000;
+        else
+        return diamond;
+     }
 }
-// var num;
-console.log(isLGSeven(10))
-
-// function findingBadData(array){
-//     let count=0;
-//     for(let i=0 ; i<=array.length; i++)
-//     {
-//         if(array[i]<0)
-//         {
-//             count++;
-//         }
-//     }
-//     console.log(count)
-// }
-// findingBadData([-1, -2, -3, 4, 5, 6])
-
-
-// function gemsToDiamond(f1,f2, f3)
-// {
-//     const f11=21;
-//     const f22=32;
-//     const f33=43;
-//     let sum=(f11*f1)+(f22*f2)+(f33*f3);
-//     //console.log(sum);
-//    if(sum>1000*2)
-//    return sum-2000;
-//    else
-//    return sum;
-// }
-// console.log(gemsToDiamond(100,5,1))
+//console.log(gemsToDiamond(1 , 1 ,1))
